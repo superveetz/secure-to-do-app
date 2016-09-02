@@ -1,2 +1,2 @@
 # secure-to-do-app
-simple to do list application that utlizes local authentication and security.
+Simple MEAN Stack To Do List Application that utlizes local user authentication and security.
