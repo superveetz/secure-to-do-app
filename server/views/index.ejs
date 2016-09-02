@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do App</title>
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css"/>
+    <link rel="stylesheet" href="/css/extra.css">
+
+    <!-- Vendor JS -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/underscore/underscore.js"></script> <!-- unminified -->
+    <script src="/bower_components/async/dist/async.js"></script>
+    <script src="/bower_components/moment/min/moment.min.js"></script>
+
+    <!-- Angular -->
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/bower_components/ng-q/q.module.min.js"></script>
+    <script src="/bower_components/ngstorage/ngStorage.min.js"></script>
+    <script src="/bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+    <script src="/bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>
+    <script src="/bower_components/angular-date-time-input/src/dateTimeInput.js"></script>
+    <script src="/js/services/lb-services.js"></script>
+    
+    <!-- Custom Modules -->
+
+    <!-- App.js -->
+    <script src="/app.js"></script>
+    <!-- Controllers -->
+    <script src="/js/controllers/app.controllers.js"></script>
+    <script src="/js/services/assets/modals/ModalCtrls.js"></script>
+    <!-- Services -->
+    <script src="/js/services/app.services.js"></script>
+    <!-- Directives -->
+    <script src="/js/directives/app.directives.js"></script>
+    
+    <base href="/">
+  </head>
+  <body>
+    
+    <div ui-view></div>
+    
+  </body>
+</html>

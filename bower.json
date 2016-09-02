@@ -1,0 +1,34 @@
+{
+  "name": "todoapp",
+  "description": "todoapp",
+  "main": "server/server.js",
+  "authors": [
+    "Superveetz <alexdiv87@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#~1.4.8",
+    "angular-resource": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "angular-bootstrap": "~0.14.3",
+    "angular-ui-router": "ui-router#~0.2.15",
+    "angular-animate": "~1.4.8",
+    "font-awesome": "~4.5.0",
+    "ng-q": "~0.1.0",
+    "angular-storage": "~0.5.0",
+    "underscore": "~1.8.3",
+    "async": "~1.5.2",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "moment": "^2.14.1",
+    "angular-bootstrap-datetimepicker": "https://github.com/dalelotts/angular-bootstrap-datetimepicker.git#^1.0.1",
+    "angular-date-time-input": "https://github.com/dalelotts/angular-date-time-input.git#^1.1.0"
+  }
+}

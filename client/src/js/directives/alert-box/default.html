@@ -1,0 +1,19 @@
+<div class="panel" ng-class="{'panel-danger': alert.type === 'error', 'panel-success': alert.type === 'success' }" 
+     ng-if="alert.show" role="alert">
+  <div class="panel-heading">
+    <button type="button" class="close" aria-label="Close" ng-click="alert.show = false">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h3 class="panel-title" ng-if="alert.title">
+      <span>
+        <i ng-if="alert.type === 'error'" class="fa fa-exclamation"></i>
+        <i ng-if="alert.type === 'success'" class="fa fa-check"></i>&nbsp;{{alert.title}}
+      </span>
+    </h3>
+  </div>
+  <div class="panel-body" ng-if="alert.errors">
+    <ul>
+      <li ng-repeat="error in alert.errors">{{error}}</li>
+    </ul>
+  </div>
+</div>

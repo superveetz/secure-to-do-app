@@ -1,0 +1,52 @@
+<div class="container">
+
+    <a ui-sref="app.todos.add" class="m-t-10 m-b-10 btn btn-sm btn-default"><i class="fa fa-plus"></i> New List</a>
+
+    <alert-box theme="default"></alert-box>
+
+    <div class="alert alert-info" ng-if="!todoLists.length">
+        <em class="lead">
+            <span ng-if="User.isAuthenticated()">You don't have any To Do Lists</span>
+            <span ng-if="!User.isAuthenticated()">Login to create a To Do List</span>
+        </em>
+    </div>
+
+    <div class="panel panel-default" ng-if="todoLists.length" 
+        ng-repeat="list in todoLists">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{list.name}} <span class="pull-right"><b>Due:</b> {{list.dueDate | date:MM:DD:YYYY}}</span></h3>
+        </div>
+        <div class="panel-body">
+            <div class="btn-group" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                    <a ui-sref="app.todos.add({ listId: list.id })" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default btn-xs" ng-click="deleteList(list)"><i class="fa fa-trash"></i> Delete</button>
+                </div>
+            </div>
+
+            <a ui-sref="app.todos.add-item({ listId: list.id })" class="btn btn-default btn-xs"><i class="fa fa-plus"></i> New Item</a>
+
+            <table class="table table-striped" ng-if="list.toDoItems.length">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Due Date</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in list.toDoItems">
+                        <td>{{item.name}}</td>
+                        <td>{{item.status}}</td>
+                        <td>{{item.dueDate | date: MM/DD/yyyy}}</td>
+                        <td>&nbsp;&nbsp;<button type="button" class="btn btn-danger btn-sm" ng-click="deleteItem(list, item)"><i class="fa fa-close"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- end panel -->
+
+</div>

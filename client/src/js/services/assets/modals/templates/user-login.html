@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title text-center"><strong>Login</strong></h3>
+  </div>
+  <div class="panel-body">
+    
+    <alert-box theme="default"></alert-box>
+    
+    <form id="loginUserForm" name="loginUserForm" 
+          ng-submit="loginUserForm.$valid && loginUser(user)" novalidate>
+      <div class="form-group">
+        <label for="emailOrUsername">Email address or Username</label>
+        <input type="text" class="form-control" id="emailOrUsername" placeholder="Email or Username"
+               ng-model="user.emailOrUsername" required>
+      </div>
+      <div class="form-group">
+        <label for="userPassword">Password</label>
+        <input type="password" class="form-control" id="userPassword" placeholder="Password"
+               ng-model="user.password" required>
+      </div>
+      <div class="checkbox text-right">
+        <label>
+          <input type="checkbox" ng-model="rememberMe"> Remember Me
+        </label>
+      </div>
+      <div class="button-group pull-right">
+        <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+        <button type="submit" class="btn btn-success" 
+                ng-disabled="loginUserForm.$invalid || submitting">
+          <span ng-if="!submitting">Submit</span>
+          <span ng-if="submitting">Submit <i class="fa fa-spinner fa-pulse"></i></span>
+        </button>
+      </div>
+    </form>
+    
+  </div>
+</div>

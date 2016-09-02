@@ -1,0 +1,58 @@
+<div class="container">
+
+    <a ui-sref="app.todos.list" class="m-t-10 m-b-10 btn btn-sm btn-default"><i class="fa fa-chevron-left"></i> Back </a>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">New To Do List Item</h3>
+        </div>
+        <div class="panel-body">
+
+            <alert-box theme="default"></alert-box>
+
+            <form class="form-horizontal" ng-submit="save()">
+                <div class="form-group">
+                    <label for="todoName" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="todoName" placeholder="Name"
+                            ng-model="todoListItem.name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="todoName" class="col-sm-2 control-label">Status</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" ng-model="todoListItem.status">
+                            <option value="New">New</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dueDate" class="col-sm-2 control-label">Due Date</label>
+                    <div class="col-sm-10">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" id="dueDate" role="button" data-toggle="dropdown" data-target="#" href="#">
+                                <div class="input-group"><input type="text" class="form-control" data-date-time-input="MM-DD-YYYY hh:mm A" data-ng-model="todoListItem.dueDate"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <datetimepicker data-ng-model="todoListItem.dueDate" data-datetimepicker-config="{ dropdownSelector: '#dueDate', startView: 'year' }"/>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" ng-click="saveItem()"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </form>
+
+        </div><!-- body -->
+    </div><!-- end panel -->
+
+</div>
