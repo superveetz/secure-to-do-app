@@ -6,12 +6,6 @@
   "options": {
     "validateUpsert": true
   },
-  "mixins": {
-    "ClearBaseAcls": true
-  },
-  "settings": {
-    "acls": []
-  },
   "properties": {
     "username": {
       "type": "string",
@@ -28,14 +22,12 @@
   },
   "validations": [],
   "relations": {
-    "ToDoLists": {
+    "toDoLists": {
       "type": "hasMany",
-      "model": "ToDoLists",
-      "foreignKey": "userId"
+      "model": "ToDoList",
+      "foreignKey": "authorId"
     }
   },
-  "acls": [
-    
-  ],
+  "acls": [],
   "methods": {}
 }

@@ -23,12 +23,12 @@
     "angular-animate": "~1.4.8",
     "font-awesome": "~4.5.0",
     "ng-q": "~0.1.0",
-    "angular-storage": "~0.5.0",
     "underscore": "~1.8.3",
     "async": "~1.5.2",
     "eonasdan-bootstrap-datetimepicker": "^4.17.37",
     "moment": "^2.14.1",
     "angular-bootstrap-datetimepicker": "https://github.com/dalelotts/angular-bootstrap-datetimepicker.git#^1.0.1",
-    "angular-date-time-input": "https://github.com/dalelotts/angular-date-time-input.git#^1.1.0"
+    "angular-date-time-input": "https://github.com/dalelotts/angular-date-time-input.git#^1.1.0",
+    "ngstorage": "^0.3.11"
   }
 }

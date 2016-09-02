@@ -23,7 +23,7 @@
     "toDoList": {
       "type": "belongsTo",
       "model": "ToDoList",
-      "foreignKey": "toDoListId"
+      "foreignKey": ""
     }
   },
   "acls": [

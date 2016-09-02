@@ -40,7 +40,6 @@
 
   .controller('ToDoListCtrl', ['$scope', 'AlertService', 'ToDoList', 'todoLists', function ($scope, AlertService, ToDoList, todoLists) {
     $scope.todoLists = todoLists;
-    console.log(todoLists);
 
     $scope.deleteList = function (list) {
       AlertService.reset();

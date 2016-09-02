@@ -177,6 +177,33 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "PUT",
             },
 
+            // INTERNAL. Use User.toDoLists.findById() instead.
+            "prototype$__findById__toDoLists": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/toDoLists/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use User.toDoLists.destroyById() instead.
+            "prototype$__destroyById__toDoLists": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/toDoLists/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use User.toDoLists.updateById() instead.
+            "prototype$__updateById__toDoLists": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/toDoLists/:fk",
+              method: "PUT",
+            },
+
             /**
              * @ngdoc method
              * @name lbServices.User#prototype$__get__accessTokens
@@ -311,6 +338,31 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              */
             "prototype$__count__accessTokens": {
               url: urlBase + "/users/:id/accessTokens/count",
+              method: "GET",
+            },
+
+            // INTERNAL. Use User.toDoLists() instead.
+            "prototype$__get__toDoLists": {
+              isArray: true,
+              url: urlBase + "/users/:id/toDoLists",
+              method: "GET",
+            },
+
+            // INTERNAL. Use User.toDoLists.create() instead.
+            "prototype$__create__toDoLists": {
+              url: urlBase + "/users/:id/toDoLists",
+              method: "POST",
+            },
+
+            // INTERNAL. Use User.toDoLists.destroyAll() instead.
+            "prototype$__delete__toDoLists": {
+              url: urlBase + "/users/:id/toDoLists",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use User.toDoLists.count() instead.
+            "prototype$__count__toDoLists": {
+              url: urlBase + "/users/:id/toDoLists/count",
               method: "GET",
             },
 
@@ -1260,6 +1312,307 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         */
         R.modelName = "User";
 
+    /**
+     * @ngdoc object
+     * @name lbServices.User.toDoLists
+     * @header lbServices.User.toDoLists
+     * @object
+     * @description
+     *
+     * The object `User.toDoLists` groups methods
+     * manipulating `ToDoList` instances related to `User`.
+     *
+     * Call {@link lbServices.User#toDoLists User.toDoLists()}
+     * to query all related instances.
+     */
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User#toDoLists
+             * @methodOf lbServices.User
+             *
+             * @description
+             *
+             * Queries toDoLists of user.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `ToDoList` object.)
+             * </em>
+             */
+        R.toDoLists = function() {
+          var TargetResource = $injector.get("ToDoList");
+          var action = TargetResource["::get::User::toDoLists"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User.toDoLists#count
+             * @methodOf lbServices.User.toDoLists
+             *
+             * @description
+             *
+             * Counts toDoLists of user.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+        R.toDoLists.count = function() {
+          var TargetResource = $injector.get("ToDoList");
+          var action = TargetResource["::count::User::toDoLists"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User.toDoLists#create
+             * @methodOf lbServices.User.toDoLists
+             *
+             * @description
+             *
+             * Creates a new instance in toDoLists of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `ToDoList` object.)
+             * </em>
+             */
+        R.toDoLists.create = function() {
+          var TargetResource = $injector.get("ToDoList");
+          var action = TargetResource["::create::User::toDoLists"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User.toDoLists#createMany
+             * @methodOf lbServices.User.toDoLists
+             *
+             * @description
+             *
+             * Creates a new instance in toDoLists of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `ToDoList` object.)
+             * </em>
+             */
+        R.toDoLists.createMany = function() {
+          var TargetResource = $injector.get("ToDoList");
+          var action = TargetResource["::createMany::User::toDoLists"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User.toDoLists#destroyAll
+             * @methodOf lbServices.User.toDoLists
+             *
+             * @description
+             *
+             * Deletes all toDoLists of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.toDoLists.destroyAll = function() {
+          var TargetResource = $injector.get("ToDoList");
+          var action = TargetResource["::delete::User::toDoLists"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User.toDoLists#destroyById
+             * @methodOf lbServices.User.toDoLists
+             *
+             * @description
+             *
+             * Delete a related item by id for toDoLists.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for toDoLists
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.toDoLists.destroyById = function() {
+          var TargetResource = $injector.get("ToDoList");
+          var action = TargetResource["::destroyById::User::toDoLists"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User.toDoLists#findById
+             * @methodOf lbServices.User.toDoLists
+             *
+             * @description
+             *
+             * Find a related item by id for toDoLists.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for toDoLists
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `ToDoList` object.)
+             * </em>
+             */
+        R.toDoLists.findById = function() {
+          var TargetResource = $injector.get("ToDoList");
+          var action = TargetResource["::findById::User::toDoLists"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.User.toDoLists#updateById
+             * @methodOf lbServices.User.toDoLists
+             *
+             * @description
+             *
+             * Update a related item by id for toDoLists.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for toDoLists
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `ToDoList` object.)
+             * </em>
+             */
+        R.toDoLists.updateById = function() {
+          var TargetResource = $injector.get("ToDoList");
+          var action = TargetResource["::updateById::User::toDoLists"];
+          return action.apply(R, arguments);
+        };
 
 
         return R;
@@ -1838,6 +2191,65 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             "createChangeStream": {
               url: urlBase + "/ToDoLists/change-stream",
               method: "POST",
+            },
+
+            // INTERNAL. Use User.toDoLists.findById() instead.
+            "::findById::User::toDoLists": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/toDoLists/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use User.toDoLists.destroyById() instead.
+            "::destroyById::User::toDoLists": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/toDoLists/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use User.toDoLists.updateById() instead.
+            "::updateById::User::toDoLists": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/users/:id/toDoLists/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use User.toDoLists() instead.
+            "::get::User::toDoLists": {
+              isArray: true,
+              url: urlBase + "/users/:id/toDoLists",
+              method: "GET",
+            },
+
+            // INTERNAL. Use User.toDoLists.create() instead.
+            "::create::User::toDoLists": {
+              url: urlBase + "/users/:id/toDoLists",
+              method: "POST",
+            },
+
+            // INTERNAL. Use User.toDoLists.createMany() instead.
+            "::createMany::User::toDoLists": {
+              isArray: true,
+              url: urlBase + "/users/:id/toDoLists",
+              method: "POST",
+            },
+
+            // INTERNAL. Use User.toDoLists.destroyAll() instead.
+            "::delete::User::toDoLists": {
+              url: urlBase + "/users/:id/toDoLists",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use User.toDoLists.count() instead.
+            "::count::User::toDoLists": {
+              url: urlBase + "/users/:id/toDoLists/count",
+              method: "GET",
             },
 
             // INTERNAL. Use ToDoItem.toDoList() instead.

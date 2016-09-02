@@ -12,8 +12,8 @@
     'lbServices',
     'ui.router',
     'ngAnimate',
-    'ng.q'
-//    'ngStorage' // localStorage is javascript global
+    'ng.q',
+    'ngStorage' // localStorage is javascript global
     ])
   
   .run(['$rootScope', '$log', '$state', 'User', 'AlertService', function($rootScope, $log, $state, User, AlertService) {

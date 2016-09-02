@@ -20,7 +20,7 @@
     "author": {
       "type": "belongsTo",
       "model": "user",
-      "foreignKey": "userId"
+      "foreignKey": ""
     },
     "toDoItems": {
       "type": "hasMany",
