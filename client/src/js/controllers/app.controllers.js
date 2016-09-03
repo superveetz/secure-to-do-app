@@ -126,7 +126,7 @@
     }
 
     $scope.save = function () {
-      $scope.todoList.userId = $scope.User.getCurrentId();
+      $scope.todoList.authorId = $scope.User.getCurrentId();
       AlertService.reset();
 
       ToDoList.upsert($scope.todoList)

@@ -97,7 +97,7 @@
           return ToDoList.find({
             filter: {
               where: {
-                userId: User.getCurrentId()
+                authorId: User.getCurrentId()
               },
               include: 'toDoItems'
             }

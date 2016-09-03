@@ -6,6 +6,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "ClearBaseAcls": true
+  },
   "properties": {
     "username": {
       "type": "string",
@@ -28,6 +31,19 @@
       "foreignKey": "authorId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "POST",
+      "permission": "ALLOW",
+      "principleType": "ROLE",
+      "principleId": "$everyone"
+    },
+    {
+      "accessType": "WRITE",
+      "permission": "ALLOW",
+      "principleType": "ROLE",
+      "principleId": "$everyone"
+    }
+  ],
   "methods": {}
 }

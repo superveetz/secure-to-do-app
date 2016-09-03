@@ -20,7 +20,7 @@
     "author": {
       "type": "belongsTo",
       "model": "user",
-      "foreignKey": ""
+      "foreignKey": "authorId"
     },
     "toDoItems": {
       "type": "hasMany",
@@ -45,6 +45,12 @@
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW"
+    },
+    {
+      "accessType": "POST",
+      "permission": "ALLOW",
+      "principleType": "ROLE",
+      "principleId": "$authenticated"
     }
   ],
   "methods": {}
