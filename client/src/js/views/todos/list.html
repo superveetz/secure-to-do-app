@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <a ui-sref="app.todos.add-item({ listId: list.id })" class="btn btn-default btn-xs"><i class="fa fa-plus"></i> New Item</a>
+            <a ui-sref="app.todos.add-item({ listId: list.id})" class="btn btn-default btn-xs"><i class="fa fa-plus"></i> New Item</a>
 
             <table class="table table-striped" ng-if="list.toDoItems.length">
                 <thead>
@@ -39,7 +39,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in list.toDoItems">
-                        <td>{{item.name}}</td>
+                        <td><a ui-sref="app.todos.add-item({ listId: list.id,itemId: item.id})">{{item.name}}</a></td>
                         <td>{{item.status}}</td>
                         <td>{{item.dueDate | date: MM/DD/yyyy}}</td>
                         <td>&nbsp;&nbsp;<button type="button" class="btn btn-danger btn-sm" ng-click="deleteItem(list, item)"><i class="fa fa-close"></i></button></td>

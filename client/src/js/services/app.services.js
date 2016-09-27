@@ -69,7 +69,7 @@
     };
   }])
   
-  .factory('AlertService', ['$log', function($log) {
+  .service('AlertService', ['$log', function($log) {
      return {
       show: false,
       persist: false,

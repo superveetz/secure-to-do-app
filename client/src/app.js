@@ -12,29 +12,18 @@
     'lbServices',
     'ui.router',
     'ngAnimate',
-    'ng.q',
-    'ngStorage' // localStorage is javascript global
+    'ngStorage',
+    'ng.q'
     ])
   
   .run(['$rootScope', '$log', '$state', 'User', 'AlertService', function($rootScope, $log, $state, User, AlertService) {
-      /**
-        * $log - Replacement for console.log() which allows debug
-        *        msgs to be turned off so that err msgs can be shown in debug mode
-        *        1. $log.debug() - only shows when debugMode enabled
-        *        2. $log.warn()  - shows when debugMode disabled
-        *        3. $log.error() - shows when debugMode disabled
-        *        4. $log.info()  - shows when debugMode disabled
-        *        5. $log.log()   - shows when debugMode disabled
-        */
-//    console.log('local: ', localStorage);
-//    console.log('storage?: ', sessionStorage);
-    
+    // attaching useful services to be always be available on the $scope
     $rootScope.$log = $log;
     $rootScope.User = User;
     $rootScope.$state = $state;
     
+    // resetting alerts on state change to avoid errors from previous states appearing on newly navigated to pages
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-      console.clear();
       AlertService.reset();
     });
     
@@ -53,6 +42,8 @@
   }])
   
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$logProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $logProvider) {
+    // app configuration
+
     // sets html5 mode so that urls do not contain #hash
     $locationProvider.html5Mode({
       enabled: true,
@@ -62,8 +53,7 @@
     // sets debug mode so that $log msgs can be shown/turned off
     $logProvider.debugEnabled(true);
     
-//    $urlRouterProvider.deferIntercept();
-    // set 404 etc.
+    // set 404 on unrecognized urls
    $urlRouterProvider.otherwise('/404');
     
       /**
@@ -136,11 +126,26 @@
     })
     
     .state('app.todos.add-item', {
-      url: '/add-item/:listId',
+      url: '/add-item/:listId/:itemId',
       templateUrl: '/js/views/todos/add-item.html',
-      controller: 'ToDoListAddItemCtrl'
+      controller: 'ToDoListAddItemCtrl',
+      resolve: {
+          toDoItem: ['$stateParams', 'ToDoItem', function ($stateParams, ToDoItem) {
+          if (!$stateParams.itemId) return null;
+
+          return ToDoItem.findById({
+            id: $stateParams.itemId
+          })
+          .$promise
+          .then(function (res) {
+            return res;
+          })
+          .catch(function (err) {
+            return null;
+          });
+        }]
+      }
     });
-    
     
   }]);
   

@@ -35,7 +35,7 @@
       "permission": "DENY"
     },
     {
-      "accessType": "WRITE",
+      "accessType": "CREATE",
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW"
@@ -43,14 +43,20 @@
     {
       "accessType": "READ",
       "principalType": "ROLE",
-      "principalId": "$authenticated",
+      "principalId": "$owner",
       "permission": "ALLOW"
     },
     {
-      "accessType": "POST",
+      "accessType": "UPDATE",
       "permission": "ALLOW",
       "principleType": "ROLE",
-      "principleId": "$authenticated"
+      "principleId": "$owner"
+    },
+    {
+      "accessType": "DELETE",
+      "permission": "ALLOW",
+      "principleType": "ROLE",
+      "principleId": "$owner"
     }
   ],
   "methods": {}
